@@ -15,10 +15,13 @@ public class Server {
             ){
                 String data;
                 while((data = clientConnect.readLine())!=null){
-                    System.out.println(data);
-                    value.println("\nServer connected.\n");
+                    System.out.println("Client: " + data);
+                    if(data.equalsIgnoreCase("END")){
+                        value.println("Connection closing . . .");
+                        break;
+                    }
+                    value.println("Recieved");
                 }
-                serverStatus = false;
             }
             catch(IOException e){
                 System.out.println("\nIO error ! ; client closed connection\n");
