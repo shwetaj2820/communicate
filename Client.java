@@ -18,7 +18,7 @@ public class Client {
             while(true){
                 System.err.println("send next request to server");
                 sendData.println(input.nextLine());
-                String response = buffer.readLine();
+                // String response = buffer.readLine();
             }
         }
     }
